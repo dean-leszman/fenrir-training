@@ -75,8 +75,9 @@
 			<div class="selection-container">
 				<label for="selection">Please select an FT:</label>
 				<select id="selection" onchange="handleFTChange()">
-					<option value="medical" selected="">CLS</option>
-					<option value="signaller">Signaller</option>
+					<option value="aa">Anti-Vehicle</option>
+					<option value="medical">CLS</option>
+					<option value="signaller" selected>Signaller</option>
 				</select>
 				
 				<button onclick="showNotepad()">Show Notepad</button>
@@ -85,6 +86,27 @@
 			
 			
 			<main>
+				<!----------------------------------------------
+					Anti-Armour / Anti-Air
+				----------------------------------------------->
+				<section class="aa">
+					<h2>Anti-Vehicle</h2>
+					
+					<!------------------------------------------
+						Procedure
+					------------------------------------------->
+					<div class="block procedure">
+						<header title="Procedure">Procedure</header>
+						
+						<div class="grow">
+							<div class="item" title="Lock on to the target, if possible">Lock-On</div>
+							<div class="item" title="Wait for acknowledgement or check you are clear to fire">Clear Backblast!</div>
+							<div class="item" title="Inform nearby units that a rocket is being fired and to stay clear">Rocket! Rocket! Rocket!</div>
+							<div class="item" title="Kaboom!">Fire!</div>
+						</div>
+					</div>
+				</section>
+			
 				<!----------------------------------------------
 					COMBAT LIFE SAVER
 				----------------------------------------------->
@@ -97,7 +119,7 @@
 					<div class="block wound-management">
 						<header title="Bandages, tourniquets, and splints">Wound Management</header>
 						
-						<div>
+						<div class="grow">
 							<div class="item" title="Apply tourniquets to limbs, if necessary. Bandage the Head and Torso. Stitch wounds shut">Heal Head & Torso</div>
 							<div class="item" title="Bandage limbs and stitch wounds shut">Heal Limbs</div>
 							<div class="item" title="Apply splints to broken limbs">Apply Splints</div>
@@ -111,7 +133,7 @@
 					<div class="block blood-management">
 						<header title="Bloodloss">Blood Management</header>
 						
-						<div>
+						<div class="grow">
 							<div class="item" title="Fatal: 1000ml. Large = 1000ml. A lot = 500ml. Some = 250ml">Give IV</div>
 							<div class="item" title="Give CPR if heart rate is 0">CPR</div>
 						</div>
@@ -123,7 +145,7 @@
 					<div class="block airway-management">
 						<header title="Manage airways">Airway Management</header>
 						
-						<div>
+						<div class="grow">
 							<div class="item" title="Check their status of their airways">Check Airways</div>
 							<div class="item" title="Head Turning or Accuvac">Remove Occlusion</div>
 							<div class="item" title="Check for, and Chest Seal, a Pneumothorax">Pneumothorax</div>
@@ -137,7 +159,7 @@
 					<div class="block vitals-management">
 						<header title="Manage vitals">Vitals Management</header>
 						
-						<div>
+						<div class="grow">
 							<div class="item" title="Give CPR or use defibrillator">No Heart Rate</div>
 							<div class="item" title="Give Epinephrine (Increases HR and blood pressure) or wait if stable">Low Heart Rate</div>
 							<div class="item" title="Give Adenosine (Lowers HR) or wait if stable">High Heart Rate</div>
@@ -160,7 +182,7 @@
 					<div class="block protocol">
 						<header title="How to speak on Long Range Radio">Protocol</header>
 						
-						<div>
+						<div class="grow">
 							<div class="item optional" title="Break current comms on radio. Only to be used in an emergency">BREAK BREAK BREAK</div>
 							<div class="item" title="The name of the receiver"><em>Receiver</em></div>
 							<div class="item" title="The name of the sender">This is <em>Sender</em></div>
@@ -190,7 +212,7 @@
 					------------------------------------------->
 					<div class="block contact-report">
 						<header title="Report a contact to FIC">Contact Report</header>
-						<div>
+						<div class="grow">
 							<div class="item" title="When did the contact happen?">When</div>
 							<div class="item" title="Where did the contact occur?">Where</div>
 							<div class="item" title="What units were involved with the contact?">What</div>

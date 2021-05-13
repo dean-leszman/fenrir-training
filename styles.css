@@ -463,6 +463,10 @@ button:hover {
 	padding: 0.2em 0.4em;
 }
 
+.grow > div {
+	flex-grow: 1;
+}
+
 .item {
 	background-color: #333;
 	border: 2px solid #555;
@@ -582,8 +586,4 @@ button:hover {
 
 .signaller .protocol .options div:first-of-type {
 	margin-top: 0;
-}
-
-.signaller .contact-report .item, .medical .block .item {
-	flex-grow: 1;
 }

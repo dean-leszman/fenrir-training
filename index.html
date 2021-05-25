@@ -1,10 +1,12 @@
 <html>
 	<head>
-		<title>Fenrir FT Cheat Sheet</title>
+		<title>Fenrir Training</title>
 		
 		<link rel="stylesheet" href="./styles.css" />
 		
-		<script type="text/javascript">
+        <script type="text/javascript">
+            let notepadMessageTimeout;
+
 			function handleFTChange() {
 				const selectElement = document.getElementById("selection");
 				
@@ -43,7 +45,8 @@
 				element.style.display = "block";
 				element.innerHTML = message;
 				
-				setTimeout(() => {
+                clearTimeout(notepadMessageTimeout);
+				notepadMessageTimeout = setTimeout(() => {
 					element.style.display = "none";
 					element.innerHTML = "";
 				}, 3000);
@@ -70,13 +73,14 @@
 	</head>
 	<body onload="handleFTChange()">
 		<div class="ft">
-			<h1>Fenrir FT Cheat Sheet</h1>
+			<h1>Fenrir Training</h1>
 			
 			<div class="selection-container">
-				<label for="selection">Please select an FT:</label>
+				<label for="selection">Please select a training:</label>
 				<select id="selection" onchange="handleFTChange()">
 					<option value="aa">Anti-Vehicle</option>
-					<option value="medical">CLS</option>
+                    <option value="medical">CLS</option>
+                    <option value="observation">Observation</option>
 					<option value="signaller" selected>Signaller</option>
 				</select>
 				
@@ -96,7 +100,7 @@
 						Procedure
 					------------------------------------------->
 					<div class="block procedure">
-						<header title="Procedure">Procedure</header>
+						<header>Procedure</header>
 						
 						<div class="grow">
 							<div class="item" title="Lock on to the target, if possible">Lock-On</div>
@@ -106,7 +110,9 @@
 						</div>
 					</div>
 				</section>
-			
+            
+
+
 				<!----------------------------------------------
 					COMBAT LIFE SAVER
 				----------------------------------------------->
@@ -143,7 +149,7 @@
 						Airway Management
 					------------------------------------------->
 					<div class="block airway-management">
-						<header title="Manage airways">Airway Management</header>
+						<header>Airway Management</header>
 						
 						<div class="grow">
 							<div class="item" title="Check their status of their airways">Check Airways</div>
@@ -157,7 +163,7 @@
 						Vitals Management
 					------------------------------------------->
 					<div class="block vitals-management">
-						<header title="Manage vitals">Vitals Management</header>
+						<header>Vitals Management</header>
 						
 						<div class="grow">
 							<div class="item" title="Give CPR or use defibrillator">No Heart Rate</div>
@@ -168,7 +174,73 @@
 						</div>
 					</div>
 				</section>
-			
+            
+                
+
+				<!----------------------------------------------
+					Observation
+				----------------------------------------------->
+                <section class="observation">
+                    <h2>Observation</h2>
+
+                    <div class="block">
+                        <header>Visibility</header>
+
+                        <div class="grow">
+                            <div class="item">Shape</div>
+                            <div class="item">Silhouette</div>
+                            <div class="item">Shine</div>
+                            <div class="item">Shadow</div>
+                            <div class="item">Spacing</div>
+                            <div class="item">Sudden Movement</div>
+                            <div class="item">Signature</div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <header>Judging Distance</header>
+
+                        <div>
+                            <div class="item">100m</div>
+                            <div class="options">
+                                <div>Body and equipment clear in detail</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="item">200m</div>
+                            <div class="options">
+                                <div>Colour of skin and equipment identifiable</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="item">300m</div>
+                            <div class="options">
+                                <div>Clear body outline with remaining details blurry</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="item">400m</div>
+                            <div class="options">
+                                <div>Clear body outline with face colour identifiable</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="item">500m</div>
+                            <div class="options">
+                                <div>Body begins to taper with head indistinct</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="item">600m</div>
+                            <div class="options">
+                                <div>Body is wedge shaped with no head apparent</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+
 				<!----------------------------------------------
 					SIGNALLER
 				----------------------------------------------->
@@ -311,7 +383,7 @@
                             <div class="item" title="One">1</div>
 							<div class="item" title="The type of target">Target Type</div>
 							<div class="options">
-								<div title="Infantry">Infantry</div>
+								<div>Infantry</div>
 								<div title="Armoured (e.g. APC, Tank, etc.)">Armoured</div>
 								<div title="Air (e.g. Helicopter, Jet, etc.)">Air</div>
 								<div title="Name the different type of target">etc.</div>
@@ -324,7 +396,7 @@
 								<div title="Bearing and distance from current position">Bearing & Distance</div>
 								<div title="Grid reference">Grid</div>
 								<div title="Map marker">Marker <em>Name</em></div>
-								<div title="Smoke">Smoke</div>
+								<div title="Smoke grenade">Smoke</div>
 							</div>
 						</div>
 						<div>
@@ -346,7 +418,7 @@
 							<div class="options">
 								<div title="Air-to-Ground missile">ATG Missile</div>
 								<div title="High Explosive">HE</div>
-								<div title="White smoke">Smoke</div>
+								<div title="Smoke rounds">Smoke</div>
 							</div>
 						</div>
 					</div>
@@ -361,12 +433,12 @@
 			
 			<textarea id="notepad" placeholder="Enter notes"></textarea>
 			
-			<div>
+			<footer>
 				<button onclick="saveNotepad()">Save</button>
 				<button onclick="loadNotepad()">Load</button>
 				<button onclick="clearNotepad()">Clear</button>
-				<button onclick="hideNotepad()">Close</button>
-			</div>
+				<button onclick="hideNotepad()">Hide</button>
+            </footer>
 		</div>
 	</body>
 </html>

@@ -413,7 +413,8 @@ button:hover {
 
 /* Element Styles */
 .ft {
-	flex-grow: 1;
+    flex-grow: 1;
+    overflow-y: auto;
 }
 
 .selection-container {
@@ -446,11 +447,14 @@ button:hover {
 .block > header {
 	background-color: slateblue;
 	border-radius: var(--border-radius);
-	cursor: help;
 	font-size: 1.5em;
 	font-weight: bold;
 	margin-bottom: 0.2em;
 	transition: background-color .2s;
+}
+
+.block > header[title] {
+    cursor: help;
 }
 
 .block > header:hover {
@@ -488,7 +492,10 @@ button:hover {
 
 .item:hover {
 	background-color: #555;
-	cursor: help;
+}
+
+.item[title] {
+    cursor: help;
 }
 
 .options {
@@ -498,10 +505,13 @@ button:hover {
 
 .options > div {
 	border: 2px solid #555;
-	cursor: help;
 	margin: 0 0.2em;
 	padding: 0.5em 1em;
 	transition: background-color .2s;
+}
+
+.options > div[title] {
+    cursor: help;
 }
 
 .options > div:hover {
@@ -513,8 +523,10 @@ button:hover {
 	border: 2px solid #444;
 	display: none;
 	flex-flow: column;
-	justify-content: space-between;
-	padding: 0.8em;
+    justify-content: space-between;
+    margin-left: 1em;
+    min-width: 15em;
+    padding: 0.8em;
 	width: 25%;
 	z-index: 1;
 }
@@ -543,13 +555,31 @@ button:hover {
 }
 
 #notepad-container header {
-	align-items: flex-start;
+	align-items: center;
 	display: flex;
-	justify-content: space-between;
+    justify-content: space-between;
+    margin-bottom: 0.8em;
+}
+
+#notepad-container header h2 {
+    margin-bottom: 0;
 }
 
 #notepad-container header #notepad-message {
 	display: none;
+}
+
+#notepad-container footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+#notepad-container footer button {
+    flex-grow: 1;
+}
+
+#notepad-container footer button + button {
+    margin-left: 0.4em;
 }
 
 #notepad {
